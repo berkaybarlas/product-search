@@ -3,7 +3,6 @@ const ITEM_PER_PAGE = 10;
 let pageIndex = 0;
 
 function checkEnter() {
-    console.log("key pressed")
     if(event.key === 'Enter') {
         getProducts();        
     }
@@ -17,7 +16,7 @@ function getProducts() {
     xmlHttp.timeout = TIMEOUT;
     xmlHttp.open( "GET", theUrl, true );
     xmlHttp.ontimeout = function () {
-        console.error("The request for " + url + " timed out.");
+        console.error("The request for " + theUrl + " timed out.");
     };
     xmlHttp.send( null );
     xmlHttp.onload = function() {
@@ -57,8 +56,6 @@ function getProducts() {
                     node.appendChild(link);
                     ul.appendChild(node);   
                 });
-                console.log(responseData[0])
-                console.log(responseData)
             } else {
                 console.error(xmlHttp.statusText);
             }
