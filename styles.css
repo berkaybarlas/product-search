@@ -1,12 +1,12 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
   }
   body {
     background-color: #e2e8f0;
   }
   h1 {
     margin-left: 10px;
-    font-family: 'Roboto', sans-serif;
     color: rgb(0, 174, 255);
     white-space: nowrap;
   }
@@ -69,26 +69,36 @@
   .searchBar:hover {
     box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
   }
-  #myUL {
+  #productList {
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
   
-  #myUL li a {
+  #productList:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #productList li a {
     border: 1px solid #ddd;
-    margin-top: -1px; /* Prevent double borders */
+    border-radius: 15px;
     background-color: #f6f6f6;
-    padding: 12px;
+    width: 350px;
+    height: 420px;
     text-decoration: none;
     font-size: 18px;
     color: black;
     display: block;
+    padding: 12px;
     margin: 0.5rem;
     box-shadow: 0 2px 3px rgba(55,63,67,.16);
-    border-radius: 15px;
+
+    float: left;
+    padding: 30px;
   }
   
-  #myUL li a:hover:not(.header) {
+  #productList li a:hover:not(.header) {
     background-color: #eee;
   }
