@@ -25,7 +25,7 @@
   .container {
     margin-top: 0;
   }
-  .searchHeader {
+  #searchHeader {
     position: fixed;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
     color: #49545a;
@@ -33,9 +33,16 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     background-color: #ffffff;
     box-sizing: border-box;
-    display: block;
+
+    overflow:hidden;
+    transition:max-height 0.8s ease-out;
+    max-height:100%; 
+  }
+  #searchHeader.small{
+    max-height:100px !important;
   }
 
   .grid {

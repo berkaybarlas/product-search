@@ -7,10 +7,10 @@
 <body>
 
 <div class="container">
-    <div class="searchHeader grid">
+    <div id="searchHeader" class="grid">
         <h1>Product Search</h1>
         <div class="searchBar">
-            <input type="text" onkeydown="checkEnter()" id="searchInput" placeholder="Search for product.." title="Type a product">
+            <input type="text" onkeydown="checkEnter()" id="searchInput" placeholder="Search for product.." title="Type a product" autofocus>
             <button onclick="getProducts()">
                 <svg id="leftSearch"focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
@@ -25,9 +25,10 @@
 
 
 <script>
-    const timeout = 50000;
+    const TIMEOUT = 50000;
+    const ITEM_PER_PAGE = 10;
     let pageIndex = 0;
-
+    
     function checkEnter() {
         console.log("key pressed")
         if(event.key === 'Enter') {
@@ -41,7 +42,7 @@
         const theUrl = "http://dummy.restapiexample.com/api/v1/employees"
 
         var xmlHttp = new XMLHttpRequest();
-        xmlHttp.timeout = timeout;
+        xmlHttp.timeout = TIMEOUT;
         xmlHttp.open( "GET", theUrl, true );
         xmlHttp.ontimeout = function () {
             console.error("The request for " + url + " timed out.");
@@ -50,6 +51,10 @@
         xmlHttp.onload = function() {
             if (xmlHttp.readyState === 4) {
                 if (xmlHttp.status === 200) {
+
+                    let header = document.getElementById("searchHeader");
+                    header.classList.add("small");
+
                     let responseData = JSON.parse(xmlHttp.response).data;
                     let node = document.createElement("LI");
                     let link = document.createElement("A")                 
@@ -60,10 +65,12 @@
                     ul = document.getElementById("productList");
                     ul.innerHTML = '';
 
-                    responseData.slice(pageIndex * 5, pageIndex * 5 + 5 ).map((item) => {
+                    responseData.slice(pageIndex * ITEM_PER_PAGE, (pageIndex + 1) * ITEM_PER_PAGE).map((item) => {
                         let responseData = JSON.parse(xmlHttp.response).data;
                         let node = document.createElement("LI");
                         let link = document.createElement("A")
+                        link.setAttribute('target', '_blank');
+                        link.setAttribute('href', 'https://www.google.com');
 
                         let productName = document.createElement("P");                      
                         let productNameText = document.createTextNode(`${item.employee_name}`);
