@@ -2,110 +2,104 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
   }
-  body {
-    background-color: #e2e8f0;
-  }
-  h1 {
-    margin-left: 10px;
-    color: rgb(0, 174, 255);
-    white-space: nowrap;
-  }
-  button {
-    height: 40px;
-    width: 24px;
-    margin-right: 10px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    flex: 0 0 auto;
-    padding: 0;
-    outline:none;
-    outline-width: 0;
-  }
-  .container {
-    margin-top: 0;
-  }
-  #searchHeader {
-    position: fixed;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
-    color: #49545a;
-    padding: .5rem 1rem;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    box-sizing: border-box;
+body {
+  background-color: #e2e8f0;
+}
+h1 {
+  margin-left: 10px;
+  color: rgb(0, 174, 255);
+  white-space: nowrap;
+}
+button {
+  height: 40px;
+  width: 24px;
+  margin-right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex: 0 0 auto;
+  padding: 0;
+  outline:none;
+  outline-width: 0;
+}
+#searchHeader {
+  position: fixed;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+  color: #49545a;
+  padding: .5rem 1rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  overflow:hidden;
+  transition:max-height 0.8s ease-out;
+  max-height:100%; 
+}
+#searchHeader.small{
+  max-height:100px !important;
+}
+.searchBar {
+  width: 665px;
+  border-radius: 24px;
+  border: 1px solid #ddd;
+  margin: 20px 200px 20px 50px;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.searchBar:hover {
+  box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+}
+#searchInput {
+  border:none;
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  margin-left: 20px;
+  outline:none;
+  outline-width: 0;
+}
+.products {
+  margin-top: 120px;
+}
+#productList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-    overflow:hidden;
-    transition:max-height 0.8s ease-out;
-    max-height:100%; 
-  }
-  #searchHeader.small{
-    max-height:100px !important;
-  }
+#productList:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#productList li a {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background-color: #f6f6f6;
+  width: 350px;
+  height: 420px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  padding: 12px;
+  margin: 0.5rem;
+  box-shadow: 0 2px 3px rgba(55,63,67,.16);
+  float: left;
+  padding: 30px;
+}
 
-  .grid {
-    display: flex;
-    align-items: center;
-  }
+#productList li a:hover {
+  background-color: #eee;
+}
+.grid {
+  display: flex;
+  align-items: center;
+}
 
-  .products {
-    margin-top: 120px;
-  }
-  .searchBar {
-    width: 665px;
-    border-radius: 24px;
-    border: 1px solid #ddd;
-    margin: 20px 200px 20px 50px;
-    display: flex;
-    align-items: center;
-    flex: 0 0 auto;
-  }
-  #searchInput {
-    border:none;
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    margin-left: 20px;
-    outline:none;
-    outline-width: 0;
-  }
-  .searchBar:hover {
-    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
-  }
-  #productList {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #productList:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
 
-  #productList li a {
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    background-color: #f6f6f6;
-    width: 350px;
-    height: 420px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block;
-    padding: 12px;
-    margin: 0.5rem;
-    box-shadow: 0 2px 3px rgba(55,63,67,.16);
-
-    float: left;
-    padding: 30px;
-  }
-  
-  #productList li a:hover:not(.header) {
-    background-color: #eee;
-  }
