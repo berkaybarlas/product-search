@@ -12,7 +12,7 @@ function checkEnter() {
 function getProducts() {
     let input = document.getElementById('searchInput');
     console.log(input.value);
-    const theUrl = "http://dummy.restapiexample.com/api/v1/employees"
+    const theUrl = "https://dummy.restapiexample.com/api/v1/employees"
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.timeout = TIMEOUT;
     xmlHttp.open( "GET", theUrl, true );
