@@ -12,11 +12,27 @@
         <div class="searchBar">
             <input type="text" onkeyup="checkEnter()" id="searchInput" placeholder="Search for product.." title="Type a product" autofocus>
             <button onclick="getProducts()">
-                <svg id="leftSearch"focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                <svg id="leftSearch"focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                    </path>
                 </svg>
             </button>
-        </div>    
+        </div>
+        <div id="pageInfo">
+            <button onclick="prevPage()">
+                <svg class="svg-icon" viewBox="0 0 15 18">
+                    <path d="M11.739,13.962c-0.087,0.086-0.199,0.131-0.312,0.131c-0.112,0-0.226-0.045-0.312-0.131l-3.738-3.736c-0.173-0.173-0.173-0.454,0-0.626l3.559-3.562c0.173-0.175,0.454-0.173,0.626,0c0.173,0.172,0.173,0.451,0,0.624l-3.248,3.25l3.425,3.426C11.911,13.511,11.911,13.789,11.739,13.962 ">
+                    </path>
+                </svg>    
+            </button>
+            <input id="pageIndicator" type="text" placeholder="1">
+            <button onclick="nextPage()">
+                <svg class="svg-icon" viewBox="0 0 15 18">
+                    <path d="M12.522,10.4l-3.559,3.562c-0.172,0.173-0.451,0.176-0.625,0c-0.173-0.173-0.173-0.451,0-0.624l3.248-3.25 L8.161,6.662c-0.173-0.173-0.173-0.452,0-0.624c0.172-0.175,0.451-0.175,0.624,0l3.738,3.736 C12.695,9.947,12.695,10.228,12.522,10.4 ">
+                    </path>
+                </svg>
+            </button>
+        </div>
     </div>
     <div class="products">
         <ul id="productList"/>

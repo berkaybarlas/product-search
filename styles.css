@@ -44,7 +44,7 @@ button {
   width: 665px;
   border-radius: 24px;
   border: 1px solid #ddd;
-  margin: 20px 200px 20px 50px;
+  margin: 20px 20px 20px 50px;
   display: flex;
   align-items: center;
   flex: 0 0 auto;
@@ -52,17 +52,29 @@ button {
 .searchBar:hover {
   box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
 }
+
 #searchInput {
   border:none;
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
   width: 100%;
   font-size: 16px;
   margin-left: 20px;
   outline:none;
   outline-width: 0;
 }
+#pageInfo {
+  display: none;
+  align-items: center;
+}
+#pageIndicator {
+  width: 20px;
+  height: 20px;
+  border:none;
+  font-size: 20px;
+  text-align: center;
+  outline:none;
+  outline-width: 0;
+}
+
 .products {
   margin-top: 120px;
 }
