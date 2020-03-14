@@ -39,8 +39,10 @@ function getProducts() {
 
 function nextPage() {
     if(pageIndex > ((responseData.length / ITEM_PER_PAGE) - 1) ) {
+        document.getElementById("next").classList.add("disabled");
         return;
     }
+    document.getElementById("prev").classList.remove("disabled");
     document.getElementById("pageIndicator").value = pageIndex;
     pageIndex++;
     loadProducts();
@@ -48,8 +50,10 @@ function nextPage() {
 
 function prevPage() {
     if( pageIndex === 0 ) {
+        document.getElementById("prev").classList.add("disabled");
         return;
     }
+    document.getElementById("next").classList.remove("disabled");
     document.getElementById("pageIndicator").value = pageIndex;
     pageIndex--;
     loadProducts();

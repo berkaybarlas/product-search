@@ -7,7 +7,7 @@ body {
 }
 h1 {
   margin-left: 10px;
-  color: rgb(0, 174, 255);
+  color: #00aeff;
   white-space: nowrap;
 }
 button {
@@ -64,6 +64,11 @@ button {
 #pageInfo {
   display: none;
   align-items: center;
+  fill: #00aeff;
+  font-size: 18px;
+}
+#prev,#next {
+  width: 30px;
 }
 #pageIndicator {
   width: 20px;
@@ -112,6 +117,11 @@ button {
 .grid {
   display: flex;
   align-items: center;
+}
+.disabled {
+  fill: #ddd;
+  color: #ddd;
+  cursor: initial;
 }
 
 
